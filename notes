@@ -1,0 +1,16 @@
+
+# initial setup, downloads the git repo in this folder
+PATH="$PATH:$HOME/.local/bin" qmk setup -H ~/source/qmk_firmware
+
+# list all keyboards
+PATH="$PATH:$HOME/.local/bin" qmk list-keyboards
+
+# create a new keymap for corne called "edman"
+PATH="$PATH:$HOME/.local/bin" qmk new-keymap -kb crkbd/rev1 -km edman
+
+# compile the keymap
+PATH="$PATH:$HOME/.local/bin" qmk compile -kb crkbd/rev1 -km edman -e CONVERT_TO=elite_pi
+
+# flash a keymap
+PATH="$PATH:$HOME/.local/bin" qmk flash -kb crkbd/rev1 -km edman -e CONVERT_TO=elite_pi
+

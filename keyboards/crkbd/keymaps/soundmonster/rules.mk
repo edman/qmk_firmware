@@ -12,3 +12,8 @@ COMBO_ENABLE       = yes
 # CONSOLE_ENABLE     = yes
 
 SRC += features/achordion.c
+
+# Edman needs this in his corne v2.
+# Equivalent to `qmk {compile,flash} ... -e CONVERT_TO=elite_pi`
+# https://docs.qmk.fm/#/feature_converters
+CONVERT_TO = elite_pi

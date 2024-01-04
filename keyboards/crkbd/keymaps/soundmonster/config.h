@@ -24,9 +24,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* Select hand configuration */
 
-// #define MASTER_LEFT
+// Edman: Define MASTER_LEFT instead of EE_HANDS. With this you can flash the
+// same build to both splits but left must be connected to USB.
+#define MASTER_LEFT
 // #define MASTER_RIGHT
-#define EE_HANDS
+// #define EE_HANDS
 
 // #define SSD1306OLED
 #undef USE_I2C

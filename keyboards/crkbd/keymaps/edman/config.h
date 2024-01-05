@@ -47,3 +47,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #define RGBLIGHT_SAT_STEP 17
     #define RGBLIGHT_VAL_STEP 17
 #endif
+
+// OLED begin.
+#undef USE_I2C
+#undef SSD1306OLED
+#ifdef OLED_ENABLE
+#    define SPLIT_LAYER_STATE_ENABLE
+#    define SPLIT_LED_STATE_ENABLE
+#    define SPLIT_MODS_ENABLE
+#    define SPLIT_OLED_ENABLE
+// This is the font copied from soundmonster/glcdfont.c
+// #    define OLED_FONT_H "keyboards/crkbd/keymaps/edman/features/oled_glcdfont.c"
+// Mostly same as above, but I changed the logo to android's instead of corne's.
+#    undef OLED_FONT_H
+#    define OLED_FONT_H "keyboards/crkbd/keymaps/edman/features/oled_glcdfont_android.c"
+#    define OLED_TIMEOUT 30000
+#endif
+// OLED end.

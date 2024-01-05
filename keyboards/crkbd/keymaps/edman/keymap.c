@@ -37,7 +37,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                  SC_LAPO, LT(1, KC_BSPC),  KC_ESC,     KC_ENT, LT(2, KC_SPC), RGUI_T(KC_TAB)
                                        //'-----------------------------------------'  '-----------------------------------------'
                                       // LALT_T(KC_LPRN) -> left paren on tap, alt on hold
-
   ),
 
     [1] = LAYOUT_split_3x6_3(
@@ -101,3 +100,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 // clang-format on
+
+#ifdef PERMISSIVE_HOLD_PER_KEY
+bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LCTL_T(KC_A):
+            // Respect TAPPING_TERM on next key down.
+            return false;
+        default:
+            // Ignore TAPPING_TERM and select the hold action on next key down.
+            return true;
+    }
+}
+#endif

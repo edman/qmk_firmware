@@ -22,14 +22,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // #define USE_MATRIX_I2C
 
-/* Select hand configuration */
-
+// Hand configuration.
 #define MASTER_LEFT
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
-// #define QUICK_TAP_TERM 0
-// #define TAPPING_TERM 100
+// Delay to determine whether a key press is a tap or hold.
+// https://docs.qmk.fm/#/tap_hold?id=tapping-term
+#define TAPPING_TERM 200
+// Ignore the tap/hold delay (defined by TAPPING_TERM) when you quickly press a
+// tap/hold key plus a second key (ABBA style).
+// https://docs.qmk.fm/#/tap_hold?id=permissive-hold
+#define PERMISSIVE_HOLD_PER_KEY
+// Allows you to double/tap and hold to repeat a tap/hold key. Setting to 0
+// disables it.
+// https://docs.qmk.fm/#/tap_hold?id=quick-tap-term
+#define QUICK_TAP_TERM 0
 
 #ifdef RGBLIGHT_ENABLE
 #    define RGBLIGHT_EFFECT_BREATHING

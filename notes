@@ -15,6 +15,7 @@ PATH="$PATH:$HOME/.local/bin" qmk compile -kb crkbd/rev1 -km edman -e CONVERT_TO
 PATH="$PATH:$HOME/.local/bin" qmk flash -kb crkbd/rev1 -km edman -e CONVERT_TO=elite_pi
 
 ## Keymaps and keycodes
+# QK_BOOT -> enter bootloader to flash
 # SC_LSPO, SC_RSPC -> hold for shift, tap for parens
 # MT(mod, kc): mod tap https://docs.qmk.fm/#/mod_tap
 # * LGUI_T(kc) -> shortcut when mod is left command (KC_LGUI)

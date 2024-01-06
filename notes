@@ -11,6 +11,9 @@ PATH="$PATH:$HOME/.local/bin" qmk new-keymap -kb crkbd/rev1 -km edman
 # compile the keymap
 PATH="$PATH:$HOME/.local/bin" qmk compile -kb crkbd/rev1 -km edman -e CONVERT_TO=elite_pi
 
+# compile the keymap and generate a compile_commands.json
+PATH="$PATH:$HOME/.local/bin" qmk compile -kb crkbd/rev1 -km edman -e CONVERT_TO=elite_pi --compiledb
+
 # flash a keymap
 PATH="$PATH:$HOME/.local/bin" qmk flash -kb crkbd/rev1 -km edman -e CONVERT_TO=elite_pi
 

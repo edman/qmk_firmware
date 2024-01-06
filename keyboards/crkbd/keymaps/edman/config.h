@@ -24,6 +24,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    include "features/oled_config.h"
 #endif
 
+#ifdef RGB_MATRIX_ENABLE
+#    include "features/rgb_matrix_config.h"
+#endif
+
 // #define USE_MATRIX_I2C
 
 // Hand configuration.

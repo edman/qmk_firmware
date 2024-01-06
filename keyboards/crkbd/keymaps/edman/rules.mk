@@ -12,4 +12,5 @@ SRC += features/oled.c
 RGBLIGHT_ENABLE    = no
 RGB_MATRIX_ENABLE  = yes
 RGB_MATRIX_DRIVER  = ws2812
+SRC += features/rgb_matrix.c
 # RGB_MATRIX end.

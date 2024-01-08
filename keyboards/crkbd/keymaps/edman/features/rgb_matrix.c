@@ -67,18 +67,18 @@
 // clang-format on
 
 // Must be kept in sync with your keymap.
-enum layers { _QWERTY, _LOWER, _RAISE, _ADJUST, _NUMS, _ARROWS };
+enum layers { BASE, SYMBOLS, ADJUST, NUMS, ARROWS };
 
 #define ARRAY_LEN(arr) (sizeof(arr) / sizeof((arr)[0]))
 
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-    if (layer_state_is(_ADJUST)) {
+    if (layer_state_is(ADJUST)) {
         for (uint8_t row = 0; row < MATRIX_ROWS; ++row) {
             for (uint8_t col = 0; col < MATRIX_COLS; ++col) {
                 uint8_t index = g_led_config.matrix_co[row][col];
                 if (index < led_min || index >= led_max || index == NO_LED) continue;
 
-                uint16_t keycode = keymap_key_to_keycode(_ADJUST, (keypos_t){col, row});
+                uint16_t keycode = keymap_key_to_keycode(ADJUST, (keypos_t){col, row});
                 if (keycode == QK_BOOT)
                     rgb_matrix_set_color(index, RGB_ORANGE);
                 else if (keycode == RGB_TOG)
@@ -92,7 +92,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
         return false;
     }
 
-    if (layer_state_is(_RAISE)) {
+    if (layer_state_is(SYMBOLS)) {
         const uint8_t pair_key[] = {LED_K4E, LED_K4D, LED_K5E, LED_K5D, LED_K6E, LED_K6D};
         for (uint8_t i = 0; i < ARRAY_LEN(pair_key); ++i)
             i % 2 == 0 ? rgb_matrix_set_color(pair_key[i], RGB_TURQUOISE) : rgb_matrix_set_color(pair_key[i], RGB_MAGENTA);
@@ -101,7 +101,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
         return false;
     }
 
-    if (layer_state_is(_NUMS)) {
+    if (layer_state_is(NUMS)) {
         const uint8_t num_key[] = {
             LED_K4E, LED_K4D, LED_K4C, LED_K5E, LED_K5D, LED_K5C, LED_K6E, LED_K6D, LED_K6C,
         };
@@ -115,7 +115,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
         return false;
     }
 
-    if (layer_state_is(_ARROWS)) {
+    if (layer_state_is(ARROWS)) {
         const uint8_t arrow_key[] = {LED_K5F, LED_K5E, LED_K5D, LED_K5C};
         for (uint8_t i = 0; i < ARRAY_LEN(arrow_key); ++i)
             rgb_matrix_set_color(arrow_key[i], RGB_CORAL);

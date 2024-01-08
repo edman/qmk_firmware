@@ -98,6 +98,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
             i % 2 == 0 ? rgb_matrix_set_color(pair_key[i], RGB_TURQUOISE) : rgb_matrix_set_color(pair_key[i], RGB_MAGENTA);
         rgb_matrix_set_color(/*S*/ LED_K1C, RGB_CORAL);
         rgb_matrix_set_color(/*Right thumb 2*/ LED_K7E, RGB_CORAL);
+        rgb_matrix_set_color(/*\, ;*/ LED_K5B, RGB_TURQUOISE);
         return false;
     }
 

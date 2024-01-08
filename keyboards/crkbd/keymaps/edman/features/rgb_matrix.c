@@ -67,7 +67,7 @@
 // clang-format on
 
 // Must be kept in sync with your keymap.
-enum layers { BASE, SYMBOLS, ADJUST, NUMS, ARROWS };
+enum layers { BASE, SYMBOLS, NUMS, ARROWS, ADJUST };
 
 #define ARRAY_LEN(arr) (sizeof(arr) / sizeof((arr)[0]))
 

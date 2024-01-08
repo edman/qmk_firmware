@@ -6,7 +6,7 @@
 // This is large a copy from soundmonster/keymap.c with minor tweaks.
 
 // Must be kept in sync with your keymap. See also render_layer_state().
-enum layers { BASE, SYMBOLS, ADJUST, NUMS, ARROWS };
+enum layers { BASE, SYMBOLS, NUMS, ARROWS, ADJUST };
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     return OLED_ROTATION_270;
